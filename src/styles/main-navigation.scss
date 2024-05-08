@@ -1,0 +1,40 @@
+
+.main-navigation {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    padding: 0 60px;
+    background-color: beige;
+
+    .main-navigation-left {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .main-navigation-right {
+        display: flex;
+        align-items: center;
+        justify-content: end;
+    }
+
+    .main-nav-link {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+        margin-left: 20px;
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+        &:hover {
+            color: grey;
+            transform: scale(1.04);
+        }
+    }
+
+    .link-active {
+        color: grey;
+        font-size: 21px;
+        border-bottom: 2px solid grey;
+    }
+}
