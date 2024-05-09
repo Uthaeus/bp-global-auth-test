@@ -3,7 +3,7 @@ import { useEffect } from "react";
 
 function UserForm({ customer }) {
 
-    const { register, handleSubmit, watch, formState: { errors }, reset } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     useEffect(() => {
         if (customer) {
@@ -11,7 +11,10 @@ function UserForm({ customer }) {
         }
     }, [customer, reset]);
 
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+
+        console.log(data);
+    };
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="user-form">
