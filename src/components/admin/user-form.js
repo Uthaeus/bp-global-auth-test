@@ -1,9 +1,11 @@
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
+import { useNavigate } from "react-router";
 
 function UserForm({ customer }) {
 
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (customer) {
@@ -14,16 +16,19 @@ function UserForm({ customer }) {
     const onSubmit = data => {
 
         console.log(data);
+
+        navigate('/admin');
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="user-form">
+        <form onSubmit={handleSubmit(onSubmit)} className="user-form w-50">
             <div className="form-group">
                 <label htmlFor="name">Name*</label>
                 <input
                     type="text"
                     className="form-control"
                     id="name"
+                    autoFocus={true}
                     {...register("name", { required: true })}
                 />
                 {errors.name && <span className="text-danger">This field is required</span>}
