@@ -14,6 +14,8 @@ export default function MainNavigation() {
 
                 <NavLink to='/contact' className={({ isActive }) => isActive ? "main-nav-link link-active" : "main-nav-link"}>Contact</NavLink>
 
+                <NavLink to='/login' className={({ isActive }) => isActive ? "main-nav-link link-active" : "main-nav-link"}>Login</NavLink>
+
                 <NavLink to='/admin' className={({ isActive }) => isActive ? "main-nav-link link-active" : "main-nav-link"}>Admin</NavLink>
             </div>
         </div>
