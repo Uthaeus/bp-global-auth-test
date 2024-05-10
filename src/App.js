@@ -3,6 +3,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./components/layouts/root-layout";
 import AdminLayout from "./components/layouts/admin-layout";
 import Home from "./pages/home";
+import About from "./pages/about";
+import Contact from "./pages/contact";
 import Admin from "./components/admin/admin";
 import CreateUser from "./components/admin/create-user";
 import EditUser from "./components/admin/edit-user";
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
         index: true,
         element: <Home />,
       },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/contact",
+        element: <Contact />,
+      }
     ],
   },
   {
