@@ -1,0 +1,47 @@
+
+
+
+/* admin menu */
+
+.admin-menu {
+    height: calc(100vh - 90px);
+    padding: 2rem;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid lightgray;
+
+    .admin-menu-link {
+        margin-top: 2rem;
+        text-decoration: none;
+    }
+
+    .admin-menu-item {
+        margin-bottom: 1rem;
+        font-weight: bold;
+        font-size: 1.4em;
+        text-decoration: none;
+        color: black;
+        border-bottom: 1px solid transparent;
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, border-bottom-color 0.3s ease-in-out;
+
+        &:hover {
+            color: blue;
+            border-bottom-color: blue;
+            transform: scale(1.06);
+        }
+    }
+
+    .menu-item-active {
+        color: blue;
+        border-bottom-color: blue;
+        font-size: 1.6em;
+    }
+
+    .admin-menu-divider {
+        height: 1px;
+        width: 100%;
+        background-color: lightgray;
+        margin: 4rem 0;
+    }
+}

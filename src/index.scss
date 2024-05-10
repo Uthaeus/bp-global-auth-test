@@ -1,6 +1,7 @@
 @import 'bootstrap';
 
 @import './styles/main-navigation.scss';
+@import './styles/admin.scss';
 
 body {
   margin: 0;
@@ -14,4 +15,12 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+
+/* admin layout */
+
+.admin-layout-body {
+    display: grid;
+    grid-template-columns: 20% 80%;
 }
