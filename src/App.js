@@ -6,9 +6,9 @@ import Home from "./pages/home";
 import About from "./pages/about";
 import Contact from "./pages/contact";
 import Admin from "./components/admin/admin";
-import CreateUser from "./components/admin/create-user";
-import EditUser from "./components/admin/edit-user";
-import UserDetail from "./components/admin/user-detail";
+import CreateUser from "./users/create-user";
+import EditUser from "./users/edit-user";
+import UserDetail from "./users/user-detail";
 
 const router = createBrowserRouter([
   {
