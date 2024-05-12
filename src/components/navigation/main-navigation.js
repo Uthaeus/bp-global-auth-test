@@ -1,10 +1,16 @@
 import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import { UserContext } from "../../store/user-context";
 
 export default function MainNavigation() {
-    const { user, isAdmin } = useContext(UserContext);
+    const { user, isAdmin, logoutUser } = useContext(UserContext);
+    const navigate = useNavigate();
+
+    const logoutHandler = () => {
+        logoutUser();
+        navigate('/');
+    }
 
     return (
         <div className="main-navigation">
@@ -29,10 +35,16 @@ export default function MainNavigation() {
                     <NavLink to='/contact' className={({ isActive }) => isActive ? "main-nav-link link-active" : "main-nav-link"}>Contact</NavLink>
 
                     
+                    { isAdmin ? (
+                        <NavLink to='/admin' className={({ isActive }) => isActive ? "main-nav-link link-active" : "main-nav-link"}>Admin</NavLink>
+                    ) : user ? (
+                        <NavLink to='/account' className={({ isActive }) => isActive ? "main-nav-link link-active" : "main-nav-link"}>My Account</NavLink>
+                    ) : (
+                        <NavLink to='/login' className={({ isActive }) => isActive ? "main-nav-link link-active" : "main-nav-link"}>Login</NavLink>
+                    )}
 
-                    <NavLink to='/login' className={({ isActive }) => isActive ? "main-nav-link link-active" : "main-nav-link"}>Login</NavLink>
+                    { user && <p className="main-nav-link" onClick={logoutHandler}>Logout</p>}
 
-                    <NavLink to='/admin' className={({ isActive }) => isActive ? "main-nav-link link-active" : "main-nav-link"}>Admin</NavLink>
                 </div>
             </div>
         </div>
