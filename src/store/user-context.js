@@ -18,7 +18,7 @@ const UserContextProvider = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        // create unsubscribe function
+        // create firebase unsubscribe function
 
         setUser(dummyAdmin);
         setIsAdmin(true);
@@ -26,6 +26,7 @@ const UserContextProvider = ({ children }) => {
     }, []);
 
     const updateUser = (data) => {
+        // firebase update function
 
         console.log('update user');
 
@@ -35,6 +36,7 @@ const UserContextProvider = ({ children }) => {
     }
 
     const logoutUser = () => {
+        // firebase signout function
 
         setUser(null);
         setIsAdmin(false);
@@ -42,6 +44,8 @@ const UserContextProvider = ({ children }) => {
     }
 
     const deleteUser = () => {
+        // firebase delete function
+        
         console.log('deleting user');
 
         setUser(null);
