@@ -11,7 +11,7 @@ export const UsersContext = createContext({
     deleteUser: () => {},
 });
 
-export const UsersContextProvider = ({ children }) => {
+const UsersContextProvider = ({ children }) => {
 
     const [users, setUsers] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -51,3 +51,5 @@ export const UsersContextProvider = ({ children }) => {
 
     return <UsersContext.Provider value={value}>{!isLoading && children}</UsersContext.Provider>
 }
+
+export default UsersContextProvider;
