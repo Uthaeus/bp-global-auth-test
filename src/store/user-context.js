@@ -5,6 +5,7 @@ import { dummyAdmin, dummyUser } from './dummy/dummy-users';
 export const UserContext = createContext({
 
     user: {},
+    isAdmin: false,
     setUser: () => {},
     updateUser: () => {},
     logoutUser: () => {},
@@ -45,7 +46,7 @@ const UserContextProvider = ({ children }) => {
 
     const deleteUser = () => {
         // firebase delete function
-        
+
         console.log('deleting user');
 
         setUser(null);
@@ -55,6 +56,7 @@ const UserContextProvider = ({ children }) => {
     const value = {
 
         user,
+        isAdmin,
         setUser,
         updateUser,
         logoutUser,
